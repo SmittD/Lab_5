@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab_5</string>
+    <string name="your_weight">Your weight</string>
+    <string name="your_height">Your height</string>
+    <string name="count">Count</string>
+    <string name="your_bmi">Your Bmi:</string>
+</resources>

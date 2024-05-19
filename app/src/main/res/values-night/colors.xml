@@ -1,0 +1,12 @@
+<resources>
+    <color name="primaryColor">#BB86FC</color>
+    <color name="primaryDarkColor">#3700B3</color>
+    <color name="secondaryColor">#03DAC5</color>
+    <color name="secondaryDarkColor">#03DAC5</color>
+    <color name="backgroundColor">#121212</color>
+    <color name="backgroundDarkColor">#121212</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="textDarkColor">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="hintTextColor">#808080</color>
+</resources>
