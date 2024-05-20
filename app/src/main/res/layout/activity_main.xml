@@ -13,10 +13,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:hintTextColor="@color/hintTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:hintTextColor="@color/hintTextColor">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numberHeightEditText"
@@ -33,10 +33,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:hintTextColor="@color/hintTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberHeight">
+        app:layout_constraintTop_toBottomOf="@+id/numberHeight"
+        app:hintTextColor="@color/hintTextColor">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numberWeightEditText"
@@ -54,8 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/your_bmi"
-        android:textColor="?attr/colorOnBackground"
         android:textSize="20sp"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberWeight" />
@@ -64,11 +64,11 @@
         android:id="@+id/buttonBmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="20dp"
         android:background="?attr/colorPrimary"
         android:text="@string/count"
         android:textColor="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textBmi" />
 
@@ -82,4 +82,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonBmi"
         app:srcCompat="@drawable/bmi_40more" />
+
+    <Button
+        android:id="@+id/buttonToggleTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:text="Toggle Theme"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonBmi"
+        app:layout_constraintTop_toTopOf="@+id/buttonBmi" />
 </androidx.constraintlayout.widget.ConstraintLayout>

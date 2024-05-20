@@ -1,17 +1,18 @@
 package com.example.lab_5
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
     private lateinit var buttonBmi: Button
+    private lateinit var buttonToggleTheme: Button
     private lateinit var imageBmi: ImageView
     private lateinit var textBmi: TextView
     private lateinit var numberWeightLayout: TextInputLayout
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonBmi = findViewById(R.id.buttonBmi)
+        buttonToggleTheme = findViewById(R.id.buttonToggleTheme)
         imageBmi = findViewById(R.id.imageBmi)
         textBmi = findViewById(R.id.textBmi)
         numberWeightLayout = findViewById(R.id.numberWeight)
@@ -77,12 +79,21 @@ class MainActivity : AppCompatActivity() {
                             textBmi.text = "Obese Class III"
                         }
                     }
-                    imageBmi.visibility = View.VISIBLE
                 } catch (e: NumberFormatException) {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show()
                 }
+                imageBmi.visibility = ImageView.VISIBLE
             } else {
                 Toast.makeText(this, "Please enter weight and height", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        buttonToggleTheme.setOnClickListener {
+            val currentNightMode = resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK
+            if (currentNightMode == android.content.res.Configuration.UI_MODE_NIGHT_YES) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
         }
     }
