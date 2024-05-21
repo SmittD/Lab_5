@@ -4,4 +4,12 @@
     <string name="your_height">Your height</string>
     <string name="count">Count</string>
     <string name="your_bmi">Your Bmi:</string>
+    <string name="pensja_brutto">Pensja brutto</string>
+    <string name="procent_pracownika">Procent pracownika</string>
+    <string name="procent_pracodawcy">Procent pracodawcy</string>
+    <string name="lat_do_emerytury">Lat do emerytury</string>
+    <string name="dop_aty_pa_stwa">Dopłaty państwa</string>
+    <string name="wynik">Wynik</string>
+    <string name="oblicz">Oblicz!</string>
+    <string name="pocz_tkowy_kapital">Początkowy kapital</string>
 </resources>

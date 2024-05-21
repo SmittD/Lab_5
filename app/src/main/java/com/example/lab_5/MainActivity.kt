@@ -43,42 +43,10 @@ class MainActivity : AppCompatActivity() {
                     val height = heightInput.toFloat() / 100 // convert to meters
                     val bmi = weight / (height * height)
 
-                    Toast.makeText(this, "BMI calculated", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "BMI $bmi", Toast.LENGTH_SHORT).show()
 
-                    when {
-                        bmi < 16 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_less16)
-                            textBmi.text = "Severe Thinness"
-                        }
-                        bmi in 16.0..16.99 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_16_17)
-                            textBmi.text = "Moderate Thinness"
-                        }
-                        bmi in 17.0..18.49 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_17_185)
-                            textBmi.text = "Mild Thinness"
-                        }
-                        bmi in 18.5..24.99 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_185_25)
-                            textBmi.text = "Normal"
-                        }
-                        bmi in 25.0..29.99 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_25_30)
-                            textBmi.text = "Overweight"
-                        }
-                        bmi in 30.0..34.99 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_30_35)
-                            textBmi.text = "Obese Class I"
-                        }
-                        bmi in 35.0..39.99 -> {
-                            imageBmi.setImageResource(R.drawable.bmi_35_40)
-                            textBmi.text = "Obese Class II"
-                        }
-                        else -> {
-                            imageBmi.setImageResource(R.drawable.bmi_40more)
-                            textBmi.text = "Obese Class III"
-                        }
-                    }
+                    calculateBmi(bmi)
+
                 } catch (e: NumberFormatException) {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show()
                 }
@@ -94,6 +62,42 @@ class MainActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        }
+    }
+    private fun calculateBmi(bmi: Float) {
+        when {
+            bmi < 16 -> {
+                imageBmi.setImageResource(R.drawable.bmi_less16)
+                textBmi.text = "Severe Thinness"
+            }
+            bmi in 16.0..16.99 -> {
+                imageBmi.setImageResource(R.drawable.bmi_16_17)
+                textBmi.text = "Moderate Thinness"
+            }
+            bmi in 17.0..18.49 -> {
+                imageBmi.setImageResource(R.drawable.bmi_17_185)
+                textBmi.text = "Mild Thinness"
+            }
+            bmi in 18.5..24.99 -> {
+                imageBmi.setImageResource(R.drawable.bmi_185_25)
+                textBmi.text = "Normal"
+            }
+            bmi in 25.0..29.99 -> {
+                imageBmi.setImageResource(R.drawable.bmi_25_30)
+                textBmi.text = "Overweight"
+            }
+            bmi in 30.0..34.99 -> {
+                imageBmi.setImageResource(R.drawable.bmi_30_35)
+                textBmi.text = "Obese Class I"
+            }
+            bmi in 35.0..39.99 -> {
+                imageBmi.setImageResource(R.drawable.bmi_35_40)
+                textBmi.text = "Obese Class II"
+            }
+            else -> {
+                imageBmi.setImageResource(R.drawable.bmi_40more)
+                textBmi.text = "Obese Class III"
             }
         }
     }
